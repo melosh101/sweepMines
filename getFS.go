@@ -12,6 +12,8 @@ import (
 //go:embed client/dist
 var embedFS embed.FS
 
+const isStatic = true
+
 func GetFs() static.ServeFileSystem {
 
 	embedFolder, err := static.EmbedFolder(embedFS, "client/dist")
