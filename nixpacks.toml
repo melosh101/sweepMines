@@ -1,0 +1,30 @@
+# Use Go provider only, manually install Node.js
+providers = ["go"]
+
+[variables]
+NODE_ENV = "production"
+
+[phases.setup]
+# Install packages needed for bun installation and Node.js
+nixPkgs = ["curl", "unzip", "bash", "go"]
+cmds = [
+    "curl -fsSL https://nodejs.org/dist/v22.12.0/node-v22.12.0-linux-x64.tar.xz | tar -xJ -C /usr/local --strip-components=1",
+    "curl -fsSL https://bun.sh/install | bash"
+]
+
+[phases.install]
+# Install dependencies for both frontend and backend
+cmds = [
+    "cd client && /root/.bun/bin/bun install",
+    "go mod download"
+]
+
+[phases.build]
+# Build frontend first using vite, then Go backend
+cmds = [
+    "cd client && /root/.bun/bin/bun run build",
+    "go build -tags !dev -o main ."
+]
+
+[start]
+cmd = "./main"
