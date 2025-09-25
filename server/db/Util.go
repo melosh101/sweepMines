@@ -13,8 +13,6 @@ import (
 var embedFolder embed.FS
 
 func Migrate(pool *pgxpool.Pool) {
-	log.Println("Migrating database")
-
 	fmt.Println("running migrations...")
 	migrationFiles, err := embedFolder.ReadDir("migrations")
 	if err != nil {
@@ -30,7 +28,7 @@ func Migrate(pool *pgxpool.Pool) {
 		if err != nil {
 			log.Fatal("failed to read migration file:", err)
 		}
-		_, err = pool.Query(context.Background(), string(migration))
+		_, err = pool.Exec(context.Background(), string(migration))
 		if err != nil {
 			log.Fatal("failed to run migration:", err)
 		}
