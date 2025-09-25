@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/server/db/migrations/0001-create_user_table.sql" value="6d26cfca-e6d3-4aca-8180-6c2726b288fc" />
+    <file url="file://$PROJECT_DIR$/server/db/sql/query.sql" value="6d26cfca-e6d3-4aca-8180-6c2726b288fc" />
+    <file url="file://$PROJECT_DIR$/server/db/sql/schema.sql" value="6d26cfca-e6d3-4aca-8180-6c2726b288fc" />
+  </component>
+</project>
