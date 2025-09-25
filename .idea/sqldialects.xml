@@ -2,6 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/server/db/migrations/0001-create_user_table.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/server/db/migrations/0002-add_user_indexes.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/server/db/sql/query.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/server/db/sql/schema.sql" dialect="PostgreSQL" />
   </component>
